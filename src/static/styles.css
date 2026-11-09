@@ -1,19 +1,19 @@
 /* Color palette */
 :root {
   /* Primary colors */
-  --primary: #1a237e;
-  --primary-light: #534bae;
-  --primary-dark: #000051;
+  --primary: #3e7d20;
+  --primary-light: #497f25;
+  --primary-dark: #2d5b16;
   --primary-text: #ffffff;
 
   /* Secondary colors */
-  --secondary: #ff6f00;
-  --secondary-light: #ffa040;
-  --secondary-dark: #c43e00;
+  --secondary: #4b7f27;
+  --secondary-light: #72a746;
+  --secondary-dark: #315d16;
   --secondary-text: #ffffff;
 
   /* Neutral colors */
-  --background: #f5f5f5;
+  --background: #f6faef;
   --surface: #ffffff;
   --text-primary: #333333;
   --text-secondary: #666666;
@@ -46,8 +46,50 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 12px;
-  background-color: var(--background);
+  background-color: transparent;
   font-size: 0.9rem;
+}
+
+html {
+  background-color: var(--background);
+}
+
+body > header,
+body > main,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
+
+.branch-background {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.branch-lines {
+  fill: none;
+  stroke: #77aa43;
+  stroke-width: 3;
+  stroke-dasharray: 8 12;
+  opacity: 0.22;
+  animation: branch-flow 70s linear infinite;
+}
+
+.branch-nodes {
+  fill: var(--background);
+  stroke: #77aa43;
+  stroke-width: 3;
+  opacity: 0.35;
+}
+
+@keyframes branch-flow {
+  to {
+    stroke-dashoffset: -400;
+  }
 }
 
 header {
@@ -62,6 +104,23 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.mascot-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.mascot-strip img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.92);
+  border: 2px solid rgba(255, 255, 255, 0.75);
+  border-radius: 50%;
 }
 
 header h1 {
@@ -195,8 +254,8 @@ section h3 {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: #e8eaf6;
-  color: #3949ab;
+  background: #e8f5d9;
+  color: #356b13;
   font-size: 0.65rem;
   font-weight: bold;
   padding: 2px 6px;
@@ -276,7 +335,7 @@ section h3 {
   width: 100%;
   font-weight: bold;
   border-radius: 20px;
-  box-shadow: 0 2px 4px rgba(255, 111, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(75, 127, 39, 0.2);
   transition: all 0.3s ease;
   display: flex;
   justify-content: center;
@@ -497,7 +556,7 @@ footer {
 .search-box input:focus {
   outline: none;
   border-color: var(--primary-light);
-  box-shadow: 0 0 0 2px rgba(83, 75, 174, 0.1);
+  box-shadow: 0 0 0 2px rgba(73, 127, 37, 0.1);
 }
 
 .search-box button {
@@ -663,4 +722,19 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .branch-lines {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  #user-controls {
+    position: static;
+    order: -1;
+    align-self: flex-end;
+    margin-bottom: 8px;
+  }
 }
