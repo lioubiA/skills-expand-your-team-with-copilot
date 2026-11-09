@@ -7,9 +7,44 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <svg
+      class="branch-background"
+      aria-hidden="true"
+      focusable="false"
+      viewBox="0 0 1600 1000"
+      preserveAspectRatio="xMidYMid slice"
+    >
+      <g class="branch-lines">
+        <path d="M80 0v140c0 42 48 42 48 84v80c0 42 48 42 48 84v112c0 42 48 42 90 42h170" />
+        <path d="M460 0v90c0 36-42 36-42 72v124c0 36 42 36 42 72v110c0 36 42 36 78 36h220" />
+        <path d="M930 0v180c0 40-48 40-48 80v126c0 40 48 40 48 80v110c0 40 48 40 88 40h240" />
+        <path d="M1370 0v128c0 38-42 38-42 76v108c0 38 42 38 42 76v150" />
+        <path d="M0 680h190c40 0 40 42 80 42h150c40 0 40 42 80 42h120" />
+        <path d="M1600 780h-190c-40 0-40 42-80 42h-150c-40 0-40 42-80 42h-120" />
+      </g>
+      <g class="branch-nodes">
+        <circle cx="80" cy="140" r="7" /><circle cx="176" cy="388" r="7" />
+        <circle cx="418" cy="162" r="7" /><circle cx="460" cy="358" r="7" />
+        <circle cx="882" cy="260" r="7" /><circle cx="930" cy="466" r="7" />
+        <circle cx="1328" cy="204" r="7" /><circle cx="1370" cy="388" r="7" />
+        <circle cx="270" cy="722" r="7" /><circle cx="1390" cy="822" r="7" />
+      </g>
+    </svg>
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
+      <div class="mascot-strip" role="group" aria-label="Octodex mascots">
+        <img
+          src="https://octodex.github.com/images/Professortocat_v2.png"
+          alt="Professor Octocat"
+          loading="lazy"
+        />
+        <img
+          src="https://octodex.github.com/images/jetpacktocat.png"
+          alt="Jetpack Octocat"
+          loading="lazy"
+        />
+      </div>
       <div id="user-controls">
         <div id="user-status">
           <button id="login-button" class="icon-button">
